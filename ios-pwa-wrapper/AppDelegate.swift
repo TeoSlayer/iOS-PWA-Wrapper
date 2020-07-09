@@ -5,9 +5,10 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        UserDefaults.standard.register(defaults: ["UserAgent" : "mobileAppClient"])
         
         return true
     }
@@ -32,6 +33,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    func saveCookies() {
+        guard let cookies = HTTPCookieStorage.shared.cookies else {
+            return
+        }
+        let array = cookies.compactMap { (cookie) -> [HTTPCookiePropertyKey: Any]? in
+            cookie.properties
+        }
+        UserDefaults.standard.set(array, forKey: "cookies")
+        UserDefaults.standard.synchronize()
+        
+    }
+
+    func loadCookies() {
+        guard let cookies = UserDefaults.standard.value(forKey: "cookies") as? [[HTTPCookiePropertyKey: Any]] else {
+            return
+        }
+        cookies.forEach { (cookie) in
+            guard let cookie = HTTPCookie.init(properties: cookie) else {
+                return
+            }
+            HTTPCookieStorage.shared.setCookie(cookie)
+        }
+        
+        HTTPCookieStorage.shared.cookieAcceptPolicy = HTTPCookie.AcceptPolicy.always
+
     }
 
 }

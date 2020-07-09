@@ -1,9 +1,9 @@
 import UIKit
 
 // Basic App-/WebView-configuration
-let appTitle = "iOS PWA Wrapper"
-let webAppUrl = URL(string: "https://develat.io")
-let allowedOrigins = ["develat.io", "google.com"]
+let appTitle = "Ski.ro"
+let webAppUrl = URL(string: "https://www.ski.ro:444/?source=pwa")
+let allowedOrigins = ["ski.ro", "google.com"]
 let app_version = "iOSApp/" + (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String)
 
 // UI Settings
@@ -12,7 +12,7 @@ let forceLargeTitle = false
 
 // Colors & Styles
 let useLightStatusBarStyle = true
-let progressBarColor = getColorFromHex(hex: 0xF9ED4F, alpha: 1.0)
+let progressBarColor = getColorFromHex(hex: 0x3E8EF7, alpha: 1.0)
 let offlineIconColor = UIColor.darkGray
 let buttonColor = getColorFromHex(hex: 0xFFFFFF, alpha: 1.0)
 let activityIndicatorColor = getColorFromHex(hex: 0xFFFFFF, alpha: 1.0)

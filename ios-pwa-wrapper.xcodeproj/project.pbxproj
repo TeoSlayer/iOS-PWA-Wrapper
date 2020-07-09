@@ -7,24 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B46D0842447AEC600ACEC05 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B46D0832447AEC600ACEC05 /* PassKit.framework */; };
 		2D504BEF1FA100E20019B279 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D504BEE1FA100E20019B279 /* AppDelegate.swift */; };
 		2D504BF11FA100E20019B279 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D504BF01FA100E20019B279 /* ViewController.swift */; };
 		2D504BF41FA100E20019B279 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D504BF21FA100E20019B279 /* Main.storyboard */; };
 		2D504BF91FA100E20019B279 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D504BF81FA100E20019B279 /* Assets.xcassets */; };
 		2D504BFC1FA100E20019B279 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D504BFA1FA100E20019B279 /* LaunchScreen.storyboard */; };
-		2D6EEE561FCB2FCB0054837D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D6EEE581FCB2FCB0054837D /* Localizable.strings */; };
 		2DC96ADE1FA5DD32006B5881 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC96ADD1FA5DD32006B5881 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B46D0812447AEA300ACEC05 /* ios-pwa-wrapperRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ios-pwa-wrapperRelease.entitlements"; sourceTree = "<group>"; };
+		2B46D0832447AEC600ACEC05 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		2D504BEB1FA100E20019B279 /* ios-pwa-wrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-pwa-wrapper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D504BEE1FA100E20019B279 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D504BF01FA100E20019B279 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2D504BF31FA100E20019B279 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2D504BF81FA100E20019B279 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2D504BF81FA100E20019B279 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/calinteodor/Documents/Ski.RO/ios-pwa-wrapper/Assets.xcassets"; sourceTree = "<absolute>"; };
 		2D504BFB1FA100E20019B279 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D504BFD1FA100E20019B279 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2D6EEE571FCB2FCB0054837D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2DC96ADD1FA5DD32006B5881 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -33,17 +34,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B46D0842447AEC600ACEC05 /* PassKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B46D0822447AEC600ACEC05 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B46D0832447AEC600ACEC05 /* PassKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2D504BE21FA100E20019B279 = {
 			isa = PBXGroup;
 			children = (
 				2D504BED1FA100E20019B279 /* ios-pwa-wrapper */,
 				2D504BEC1FA100E20019B279 /* Products */,
+				2B46D0822447AEC600ACEC05 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +69,7 @@
 		2D504BED1FA100E20019B279 /* ios-pwa-wrapper */ = {
 			isa = PBXGroup;
 			children = (
+				2B46D0812447AEA300ACEC05 /* ios-pwa-wrapperRelease.entitlements */,
 				2D504BEE1FA100E20019B279 /* AppDelegate.swift */,
 				2D504BF01FA100E20019B279 /* ViewController.swift */,
 				2D504BF21FA100E20019B279 /* Main.storyboard */,
@@ -65,7 +77,6 @@
 				2D504BFA1FA100E20019B279 /* LaunchScreen.storyboard */,
 				2D504BFD1FA100E20019B279 /* Info.plist */,
 				2DC96ADD1FA5DD32006B5881 /* Constants.swift */,
-				2D6EEE581FCB2FCB0054837D /* Localizable.strings */,
 			);
 			path = "ios-pwa-wrapper";
 			sourceTree = "<group>";
@@ -86,6 +97,8 @@
 			dependencies = (
 			);
 			name = "ios-pwa-wrapper";
+			packageProductDependencies = (
+			);
 			productName = "ios-pwa-wrapper";
 			productReference = 2D504BEB1FA100E20019B279 /* ios-pwa-wrapper.app */;
 			productType = "com.apple.product-type.application";
@@ -116,6 +129,8 @@
 				Base,
 			);
 			mainGroup = 2D504BE21FA100E20019B279;
+			packageReferences = (
+			);
 			productRefGroup = 2D504BEC1FA100E20019B279 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,7 +146,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D504BFC1FA100E20019B279 /* LaunchScreen.storyboard in Resources */,
-				2D6EEE561FCB2FCB0054837D /* Localizable.strings in Resources */,
 				2D504BF91FA100E20019B279 /* Assets.xcassets in Resources */,
 				2D504BF41FA100E20019B279 /* Main.storyboard in Resources */,
 			);
@@ -167,14 +181,6 @@
 				2D504BFB1FA100E20019B279 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		2D6EEE581FCB2FCB0054837D /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D6EEE571FCB2FCB0054837D /* en */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -299,12 +305,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 23L7LYEJ3C;
+				DEVELOPMENT_TEAM = R7KRQUK276;
 				INFOPLIST_FILE = "ios-pwa-wrapper/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.develat.io;
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ski.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -316,14 +322,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "ios-pwa-wrapper/ios-pwa-wrapperRelease.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 23L7LYEJ3C;
+				DEVELOPMENT_TEAM = R7KRQUK276;
 				INFOPLIST_FILE = "ios-pwa-wrapper/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.develat.io;
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = ro.ski.skiro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

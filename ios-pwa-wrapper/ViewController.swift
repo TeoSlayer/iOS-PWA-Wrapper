@@ -1,6 +1,7 @@
 import UIKit
 import WebKit
 
+
 class ViewController: UIViewController, UIScrollViewDelegate {
 
     // MARK: Outlets
@@ -15,11 +16,19 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     var webView: WKWebView!
     var tempView: WKWebView!
     var progressBar : UIProgressView!
+    var insets : UIEdgeInsets = .zero
+    
 
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.title = appTitle
+        
+    
+        
         setupApp()
     }
 
@@ -58,7 +67,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     // Initialize WKWebView
     func setupWebView() {
         // set up webview
-        webView = WKWebView(frame: CGRect(x: 0, y: 0, width: webViewContainer.frame.width, height: webViewContainer.frame.height))
+        webView = WKWebView()
+        webView.frame = view.bounds;
         webView.navigationDelegate = self
         webView.uiDelegate = self
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -75,25 +85,19 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
         // settings
         webView.configuration.preferences.javaScriptEnabled = true
-        if #available(iOS 10.0, *) {
-            webView.configuration.ignoresViewportScaleLimits = false
+        if #available(iOS 11.0, *) {
+          webView.scrollView.contentInsetAdjustmentBehavior = .never
         }
-
-        // make it possible to detect the version of the app
-        webView.evaluateJavaScript("app_version = '" + app_version + "';")
-        if #available(iOS 9.0, *) {
-            tempView = WKWebView(frame: .zero)
-            tempView.evaluateJavaScript("navigator.userAgent", completionHandler: { (result, error) in
-                if let resultObject = result {
-                    self.webView.customUserAgent = (String(describing: resultObject) + " " + app_version)
-                    self.tempView = nil
-                }
-            })
-        }
-
+        
+        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(webView)
         // init observers
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.isLoading), options: NSKeyValueObservingOptions.new, context: nil)
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: NSKeyValueObservingOptions.new, context: nil)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+
+
+        
     }
 
     func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
@@ -156,7 +160,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.isLoading))
         webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
     }
+    
+    
+
 }
+
 
 // WebView Event Listeners
 extension ViewController: WKNavigationDelegate {
@@ -213,3 +221,4 @@ extension ViewController: WKUIDelegate {
         }
     }
 }
+
